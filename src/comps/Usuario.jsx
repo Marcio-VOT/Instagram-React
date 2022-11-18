@@ -29,4 +29,3 @@ function Usuario(props) {
     </React.Fragment>
   );
 }
-S;
