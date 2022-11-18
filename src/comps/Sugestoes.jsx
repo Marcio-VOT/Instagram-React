@@ -1,69 +1,60 @@
 export default () => {
+  const sug = [
+    {
+      imgUsuario: "assets/bad.vibes.memes.svg",
+      nomeUsuario: "bad.vibes.memes",
+      segueUsuario: "Segue você",
+      seguirUsuario: "Seguir",
+    },
+    {
+      imgUsuario: "assets/chibirdart.svg",
+      nomeUsuario: "chibirdart",
+      segueUsuario: "Segue você",
+      seguirUsuario: "Seguir",
+    },
+    {
+      imgUsuario: "assets/razoesparaacreditar.svg",
+      nomeUsuario: "razoesparaacreditar",
+      segueUsuario: "Segue você",
+      seguirUsuario: "Seguir",
+    },
+    {
+      imgUsuario: "assets/adorable_animals.svg",
+      nomeUsuario: "adorable_animals",
+      segueUsuario: "Segue você",
+      seguirUsuario: "Seguir",
+    },
+    {
+      imgUsuario: "assets/smallcutecats.svg",
+      nomeUsuario: "smallcutecats",
+      segueUsuario: "Segue você",
+      seguirUsuario: "Seguir",
+    },
+  ];
   return (
     <div className="sugestoes">
       <div className="titulo">
         Sugestões para você<div>Ver tudo</div>
       </div>
 
-      <div className="sugestao">
-        <div className="usuario">
-          <img src="assets/bad.vibes.memes.svg" />
-          <div className="texto">
-            <div className="nome">bad.vibes.memes</div>
-            <div className="razao">Segue você</div>
-          </div>
-        </div>
-
-        <div className="seguir">Seguir</div>
-      </div>
-
-      <div className="sugestao">
-        <div className="usuario">
-          <img src="assets/chibirdart.svg" />
-          <div className="texto">
-            <div className="nome">chibirdart</div>
-            <div className="razao">Segue você</div>
-          </div>
-        </div>
-
-        <div className="seguir">Seguir</div>
-      </div>
-
-      <div className="sugestao">
-        <div className="usuario">
-          <img src="assets/razoesparaacreditar.svg" />
-          <div className="texto">
-            <div className="nome">razoesparaacreditar</div>
-            <div className="razao">Novo no Instagram</div>
-          </div>
-        </div>
-
-        <div className="seguir">Seguir</div>
-      </div>
-
-      <div className="sugestao">
-        <div className="usuario">
-          <img src="assets/adorable_animals.svg" />
-          <div className="texto">
-            <div className="nome">adorable_animals</div>
-            <div className="razao">Segue você</div>
-          </div>
-        </div>
-
-        <div className="seguir">Seguir</div>
-      </div>
-
-      <div className="sugestao">
-        <div className="usuario">
-          <img src="assets/smallcutecats.svg" />
-          <div className="texto">
-            <div className="nome">smallcutecats</div>
-            <div className="razao">Segue você</div>
-          </div>
-        </div>
-
-        <div className="seguir">Seguir</div>
-      </div>
+      {sug.map((f) => (
+        <Sugestao pessoa={f} />
+      ))}
     </div>
   );
 };
+function Sugestao(props) {
+  return (
+    <div className="sugestao">
+      <div className="usuario">
+        <img src={props.pessoa.imgUsuario} />
+        <div className="texto">
+          <div className="nome">{props.pessoa.nomeUsuario}</div>
+          <div className="razao">{props.pessoa.segueUsuario}</div>
+        </div>
+      </div>
+
+      <div className="seguir">{props.pessoa.seguirUsuario}</div>
+    </div>
+  );
+}

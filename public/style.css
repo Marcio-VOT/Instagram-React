@@ -121,7 +121,7 @@ body {
   align-items: center;
   height: 66px;
   width: 66px;
-  background-image: url("../assets/img/story-circle.svg");
+  background-image: url("../assets/story-circle.svg");
 }
 
 .story .imagem img {
