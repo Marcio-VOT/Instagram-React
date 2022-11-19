@@ -6,14 +6,14 @@ export default () => {
       usuario: "meowed",
       conteudoIMG: "assets/gato-telefone.svg",
       curtidoPor: "respondeai",
-      likesPost: 101.523,
+      likesPost: 101523,
     },
     {
       usuarioIMG: "assets/barked.svg",
       usuario: "barked",
       conteudoIMG: "assets/dog.svg",
       curtidoPor: "respondeai",
-      likesPost: 101.523,
+      likesPost: 101523,
     },
   ];
   return (
@@ -100,7 +100,9 @@ function Fundo(props) {
           <strong>
             {" "}
             outras{" "}
-            {likes ? props.fundo.likesPost + 0.001 : props.fundo.likesPost}{" "}
+            {likes
+              ? (props.fundo.likesPost + 1).toLocaleString("pt-BR")
+              : props.fundo.likesPost.toLocaleString("pt-BR")}{" "}
             pessoas
           </strong>
         </div>
