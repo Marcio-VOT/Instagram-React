@@ -1,3 +1,4 @@
+import React from "react";
 export default () => {
   const esquerda = [
     "heart-outline",
@@ -30,15 +31,15 @@ function Post(props) {
   return (
     <div className="post">
       {lista.map((f) => (
-        <Topo topo={f} />
+        <Topo key={f} topo={f} />
       ))}
 
       {lista.map((f) => (
-        <Conteudo conteudo={f} />
+        <Conteudo key={f} conteudo={f} />
       ))}
 
       {lista.map((f) => (
-        <Fundo fundo={f} />
+        <Fundo key={f} fundo={f} />
       ))}
     </div>
   );
@@ -69,12 +70,12 @@ function Fundo(props) {
       <div className="acoes">
         <div>
           {props.fundo.acoesEsquerda.map((f) => (
-            <ion-icon name={f}></ion-icon>
+            <ion-icon key={f} name={f}></ion-icon>
           ))}
         </div>
         <div>
           {props.fundo.acoesDireita.map((f) => (
-            <ion-icon name={f}></ion-icon>
+            <ion-icon key={f} name={f}></ion-icon>
           ))}
         </div>
       </div>

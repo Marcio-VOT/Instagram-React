@@ -1,3 +1,4 @@
+import React from "react";
 export default () => {
   const list = [
     "home",
@@ -7,9 +8,9 @@ export default () => {
     "person-outline",
   ];
   return (
-    <div class="fundo-mobile">
+    <div className="fundo-mobile">
       {list.map((n) => (
-        <ion-icon name={n}></ion-icon>
+        <ion-icon key={n} name={n}></ion-icon>
       ))}
     </div>
   );

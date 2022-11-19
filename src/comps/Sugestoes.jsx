@@ -1,3 +1,4 @@
+import React from "react";
 export default () => {
   const sug = [
     {
@@ -38,7 +39,7 @@ export default () => {
       </div>
 
       {sug.map((f) => (
-        <Sugestao pessoa={f} />
+        <Sugestao key={f.nomeUsuario} pessoa={f} />
       ))}
     </div>
   );

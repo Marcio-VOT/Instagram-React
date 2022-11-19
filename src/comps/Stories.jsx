@@ -1,3 +1,4 @@
+import React from "react";
 export default () => {
   const str = [
     { imagem: "./assets/9gag.svg", usuario: "9gag" },
@@ -15,7 +16,7 @@ export default () => {
   return (
     <div className="stories">
       {str.map((dados) => (
-        <Str dados={dados} />
+        <Str key={dados.usuario} dados={dados} />
       ))}
 
       <div className="setinha">

@@ -6,6 +6,7 @@ export default () => {
     nomePerfil: "catanacomics",
     subNomePerfil: "Catana",
   };
+
   return (
     <div className="usuario">
       <Usuario dados={usuario} />
@@ -13,15 +14,20 @@ export default () => {
   );
 };
 function Usuario(props) {
+  const [nome, setNome] = React.useState("");
+  const [imagem, setImagem] = React.useState("");
   return (
     <React.Fragment>
-      <img src={props.dados.fotoPerfil} />
+      <img
+        onClick={() => setImagem(prompt("qual o link da imagem?"))}
+        src={!imagem ? props.dados.fotoPerfil : imagem}
+      />
       <div className="texto">
         <strong>{props.dados.nomePerfil}</strong>
         <span>
-          <span>{props.dados.subNomePerfil}</span>
+          <span>{!nome ? props.dados.subNomePerfil : nome}</span>
           <ion-icon
-            onclick="((a)=> { a.parentElement.querySelector('span').innerHTML= prompt('qual seu nome') })(this)"
+            onClick={() => setNome(prompt("qual seu nome"))}
             name="pencil"
           ></ion-icon>
         </span>

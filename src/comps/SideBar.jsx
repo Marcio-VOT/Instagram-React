@@ -1,3 +1,4 @@
+import React from "react";
 import Sugestoes from "./Sugestoes";
 import Usuario from "./Usuario";
 
