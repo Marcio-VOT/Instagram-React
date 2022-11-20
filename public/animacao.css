@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1;
+  z-index: -1;
   width: 100%;
   height: 100%;
   font-size: 150px;
@@ -17,6 +17,7 @@
 
 @keyframes scale {
   to {
+    z-index: 1;
     color: white;
     transform: scale(1);
   }

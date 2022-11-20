@@ -65,21 +65,23 @@ function Fundo(props) {
   const [book, setBook] = React.useState(false);
   const [anima, setAnima] = react.useState("animado");
 
+  function likeImagem() {
+    setLikes(true);
+    setAnima("animado animate");
+    setTimeout(() => {
+      setAnima("animado");
+    }, 800);
+  }
+
   return (
     <React.Fragment>
-      <div className="conteudo">
+      <div onDoubleClick={likeImagem} className="conteudo">
         <div className={anima}>
           <ion-icon name="heart"></ion-icon>
         </div>
         <img
           data-test="post-image"
-          onDoubleClick={() => {
-            setLikes(true);
-            setAnima("animado animate");
-            setTimeout(() => {
-              setAnima("animado");
-            }, 800);
-          }}
+          onDoubleClick={likeImagem}
           src={props.conteudo.conteudoIMG}
         />
       </div>
