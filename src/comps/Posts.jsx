@@ -64,13 +64,7 @@ function Fundo(props) {
   const [likes, setLikes] = React.useState(false);
   const [book, setBook] = React.useState(false);
   const [anima, setAnima] = react.useState("animado");
-  function likeImagem() {
-    setLikes(true);
-    setAnima("animado animate");
-    setTimeout(() => {
-      setAnima("animado");
-    }, 800);
-  }
+
   return (
     <React.Fragment>
       <div className="conteudo">
@@ -79,7 +73,13 @@ function Fundo(props) {
         </div>
         <img
           data-test="post-image"
-          onDoubleClick={likeImagem}
+          onDoubleClick={() => {
+            setLikes(true);
+            setAnima("animado animate");
+            setTimeout(() => {
+              setAnima("animado");
+            }, 800);
+          }}
           src={props.conteudo.conteudoIMG}
         />
       </div>
