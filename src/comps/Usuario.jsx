@@ -8,7 +8,7 @@ export default () => {
   };
 
   return (
-    <div className="usuario">
+    <div data-test="user" className="usuario">
       <Usuario dados={usuario} />
     </div>
   );
@@ -19,14 +19,18 @@ function Usuario(props) {
   return (
     <React.Fragment>
       <img
+        data-test="profile-image"
         onClick={() => setImagem(prompt("qual o link da imagem?"))}
         src={!imagem ? props.dados.fotoPerfil : imagem}
       />
       <div className="texto">
         <strong>{props.dados.nomePerfil}</strong>
         <span>
-          <span>{!nome ? props.dados.subNomePerfil : nome}</span>
+          <span data-test="name">
+            {!nome ? props.dados.subNomePerfil : nome}
+          </span>
           <ion-icon
+            data-test="edit-name"
             onClick={() => setNome(prompt("qual seu nome"))}
             name="pencil"
           ></ion-icon>
