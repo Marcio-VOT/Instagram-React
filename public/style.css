@@ -192,6 +192,10 @@ body {
   width: 100%;
 }
 
+.conteudo {
+  position: relative;
+}
+
 .post .fundo .acoes {
   display: flex;
   justify-content: space-between;
